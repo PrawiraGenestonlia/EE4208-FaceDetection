@@ -1,0 +1,39 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "[Training] Test case",
+      "type": "shell",
+      "command": "./training 1",
+      "problemMatcher": [
+        "$gcc"
+      ],
+    },
+    {
+      "label": "[Training] Complete",
+      "type": "shell",
+      "command": "./training",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "[Compile] Complete",
+      "type": "shell",
+      "command": "./compile.sh",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "[Detection] Normal",
+      "type": "shell",
+      "command": "./faceDetection",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}
