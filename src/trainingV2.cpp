@@ -59,10 +59,11 @@ int main(int argc, char *argv[])
   for (const auto &name : trainingSet)
   {
     cv::Mat singleImage = detectAndImage(name.second);
-    std::cout << "[" << name.first << "] " << name.second << std::endl;
     if (!singleImage.empty())
     {
+      std::cout << "[" << name.first << "] " << name.second << std::endl;
       images[name.first] = singleImage;
+      // usleep(2000000);
     }
   }
 

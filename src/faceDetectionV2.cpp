@@ -12,12 +12,17 @@
 using namespace std;
 using namespace cv;
 
+//
+int ERR_THRESHOLD = 100000; //4000
+
 //function headers
 int openWebCam();
 cv::Mat detectAndDisplay(Mat frame);
 void debugLog(std::string text);
 std::string faceRecognition(cv::Mat greyScaleFace);
 std::string ncc(cv::Mat weight, std::map<std::string, cv::Mat> trainedWeights);
+std::string nccWithGrouping(cv::Mat weight, const std::map<std::string, std::map<std::string, cv::Mat>> trainedWeightsWithName);
+void obtainRestructureWeights();
 
 //global variable
 string face_cascade_name = "./data/haarcascade_frontalface_alt.xml";
@@ -30,9 +35,8 @@ string filename;
 std::map<std::string, cv::Mat> trainedWeights;
 std::map<std::string, cv::Mat> trainedDataAvgFace;
 std::map<std::string, cv::Mat> trainedEigenVectors;
-
+std::map<std::string, std::map<std::string, cv::Mat>> trainedWeightsWithName;
 //
-int ERR_THRESHOLD = 3500;
 
 int main(int argc, char *argv[])
 {
@@ -61,7 +65,7 @@ int main(int argc, char *argv[])
   ReadMapMatrix("./data", "/trainedWeights.dat", trainedWeights);
   ReadMapMatrix("./data", "/trainedAverageFace.dat", trainedDataAvgFace);
   ReadMapMatrix("./data", "/trainedEigenVectors.dat", trainedEigenVectors);
-
+  obtainRestructureWeights();
   // Main program
   openWebCam();
 }
@@ -197,7 +201,15 @@ std::string faceRecognition(cv::Mat greyScaleFace)
   inputImage = inputImage - trainedDataAvgFace["trained"];
   cv::Mat weight = calcWeightsReduced(inputImage.reshape(1, 1), trainedEigenVectors["trained"], 1, 0);
 
-  return ncc(weight, trainedWeights);
+  return nccWithGrouping(weight, trainedWeightsWithName);
+}
+
+void obtainRestructureWeights()
+{
+  for (const auto &member : trainedWeights)
+  {
+    trainedWeightsWithName[obtainName(member.first)][member.first] = member.second;
+  }
 }
 
 std::string ncc(cv::Mat weight, const std::map<std::string, cv::Mat> trainedWeights)
@@ -221,6 +233,61 @@ std::string ncc(cv::Mat weight, const std::map<std::string, cv::Mat> trainedWeig
   if (lowest_err <= ERR_THRESHOLD)
   {
     return splitString(output);
+  }
+  else
+  {
+    return "unknown";
+  }
+}
+
+std::string nccWithGrouping(cv::Mat weight, const std::map<std::string, std::map<std::string, cv::Mat>> trainedWeightsWithName)
+{
+  std::string output = "unknown";
+  float lowest_err = 100000000;
+  for (const auto &member : trainedWeightsWithName)
+  {
+    float current_err = 0;
+    int numOfImages = 0;
+    for (const auto &member2 : member.second)
+    {
+      numOfImages++;
+      cv::Mat savedWeights = member2.second;
+      current_err += norm(weight - savedWeights, NORM_L2);
+    }
+    current_err = current_err / numOfImages;
+    if (current_err < lowest_err)
+    {
+      output = member.first;
+      lowest_err = current_err;
+    }
+    std::cout << "checking: " << member.first << " (" << numOfImages << ") => error: " << current_err << std::endl;
+  }
+  std::cout << "..." << std::endl;
+  std::string details = "";
+  float lowest_err_details = 100000000;
+  for (const auto &member : trainedWeightsWithName)
+  {
+    if (member.first == output)
+    {
+      for (const auto &member2 : member.second)
+      {
+        cv::Mat savedWeights = member2.second;
+        float current_err = norm(weight - savedWeights, NORM_L2);
+        if (current_err < lowest_err_details)
+        {
+          details = member2.first;
+          lowest_err_details = current_err;
+        }
+        std::cout << "checking: " << member2.first << " ===== error: " << current_err << std::endl;
+      }
+      std::cout << "----------------------------------------------------------------" << std::endl;
+      std::cout << "Matched to: " << details << " With error of: " << lowest_err_details << std::endl;
+      std::cout << "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" << std::endl;
+    }
+  }
+  if (lowest_err_details <= ERR_THRESHOLD)
+  {
+    return splitString(details);
   }
   else
   {

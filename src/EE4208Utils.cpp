@@ -460,3 +460,17 @@ std::string splitString(std::string inputString)
   }
   return ss;
 }
+
+std::string obtainName(std::string inputString)
+{
+  std::string ss = "";
+  for (int i = 0; i < inputString.size(); i++)
+  {
+    if (inputString[i] == '_')
+    {
+      return ss;
+    }
+    ss += inputString[i];
+  }
+  return ss;
+}
