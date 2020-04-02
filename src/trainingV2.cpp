@@ -103,11 +103,23 @@ int main(int argc, char *argv[])
   }
   mean_face = mean_face.t();
 
-  //[method 1] using in built PCA function to find eigenvectors
   cv::Mat data2 = createDataMatrix(totalFaceZeroMean);
+  //[method 1] using in built PCA function to find eigenvectors
   cv::PCA pca2(data2, Mat(), PCA::DATA_AS_COL);
   cv::Mat EigenValues(pca2.eigenvalues);
   cv::Mat EigenVectors(pca2.eigenvectors);
+
+  //[method 2] manual calculation of eigenvectors
+  // cv::Mat Cov = mean_face * mean_face.t() / numberOfImages;
+  // cv::eigen(Cov, EigenValues, EigenVectors);
+  // EigenValues = mean_face.t() * EigenValues;
+  // EigenVectors = mean_face.t() * EigenVectors;
+  // EigenVectors = EigenVectors.t();
+  // EigenVectors = norm(EigenVectors);
+
+  std::cout
+      << "[DEBUG] "
+      << "eigen size: " << EigenValues.size() << std::endl;
 
   //calculate weight of the eigenvectors
   std::cout << "Calculating weight..." << std::endl;
