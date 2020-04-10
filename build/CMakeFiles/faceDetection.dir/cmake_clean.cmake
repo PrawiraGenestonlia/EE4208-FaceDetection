@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o"
+  "CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o"
   "../faceDetection.pdb"
   "../faceDetection"
 )

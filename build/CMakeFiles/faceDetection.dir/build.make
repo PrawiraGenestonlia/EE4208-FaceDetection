@@ -57,27 +57,27 @@ include CMakeFiles/faceDetection.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/faceDetection.dir/flags.make
 
-CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o: CMakeFiles/faceDetection.dir/flags.make
-CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o: ../src/faceDetectionV2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/prawira/projects/EE4208_FD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o"
-	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o -c /Users/prawira/projects/EE4208_FD/src/faceDetectionV2.cpp
+CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o: CMakeFiles/faceDetection.dir/flags.make
+CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o: ../src/faceDetection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/prawira/projects/EE4208_FD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o -c /Users/prawira/projects/EE4208_FD/src/faceDetection.cpp
 
-CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/prawira/projects/EE4208_FD/src/faceDetectionV2.cpp > CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.i
+CMakeFiles/faceDetection.dir/src/faceDetection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/faceDetection.dir/src/faceDetection.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/prawira/projects/EE4208_FD/src/faceDetection.cpp > CMakeFiles/faceDetection.dir/src/faceDetection.cpp.i
 
-CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/prawira/projects/EE4208_FD/src/faceDetectionV2.cpp -o CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.s
+CMakeFiles/faceDetection.dir/src/faceDetection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/faceDetection.dir/src/faceDetection.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/prawira/projects/EE4208_FD/src/faceDetection.cpp -o CMakeFiles/faceDetection.dir/src/faceDetection.cpp.s
 
 # Object files for target faceDetection
 faceDetection_OBJECTS = \
-"CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o"
+"CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o"
 
 # External object files for target faceDetection
 faceDetection_EXTERNAL_OBJECTS =
 
-../faceDetection: CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o
+../faceDetection: CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o
 ../faceDetection: CMakeFiles/faceDetection.dir/build.make
 ../faceDetection: /usr/local/lib/libopencv_gapi.4.2.0.dylib
 ../faceDetection: /usr/local/lib/libopencv_stitching.4.2.0.dylib

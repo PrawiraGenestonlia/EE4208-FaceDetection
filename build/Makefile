@@ -136,59 +136,59 @@ training/fast:
 	$(MAKE) -f CMakeFiles/training.dir/build.make CMakeFiles/training.dir/build
 .PHONY : training/fast
 
-src/faceDetectionV2.o: src/faceDetectionV2.cpp.o
+src/faceDetection.o: src/faceDetection.cpp.o
 
-.PHONY : src/faceDetectionV2.o
-
-# target to build an object file
-src/faceDetectionV2.cpp.o:
-	$(MAKE) -f CMakeFiles/faceDetection.dir/build.make CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o
-.PHONY : src/faceDetectionV2.cpp.o
-
-src/faceDetectionV2.i: src/faceDetectionV2.cpp.i
-
-.PHONY : src/faceDetectionV2.i
-
-# target to preprocess a source file
-src/faceDetectionV2.cpp.i:
-	$(MAKE) -f CMakeFiles/faceDetection.dir/build.make CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.i
-.PHONY : src/faceDetectionV2.cpp.i
-
-src/faceDetectionV2.s: src/faceDetectionV2.cpp.s
-
-.PHONY : src/faceDetectionV2.s
-
-# target to generate assembly for a file
-src/faceDetectionV2.cpp.s:
-	$(MAKE) -f CMakeFiles/faceDetection.dir/build.make CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.s
-.PHONY : src/faceDetectionV2.cpp.s
-
-src/trainingV2.o: src/trainingV2.cpp.o
-
-.PHONY : src/trainingV2.o
+.PHONY : src/faceDetection.o
 
 # target to build an object file
-src/trainingV2.cpp.o:
-	$(MAKE) -f CMakeFiles/training.dir/build.make CMakeFiles/training.dir/src/trainingV2.cpp.o
-.PHONY : src/trainingV2.cpp.o
+src/faceDetection.cpp.o:
+	$(MAKE) -f CMakeFiles/faceDetection.dir/build.make CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o
+.PHONY : src/faceDetection.cpp.o
 
-src/trainingV2.i: src/trainingV2.cpp.i
+src/faceDetection.i: src/faceDetection.cpp.i
 
-.PHONY : src/trainingV2.i
+.PHONY : src/faceDetection.i
 
 # target to preprocess a source file
-src/trainingV2.cpp.i:
-	$(MAKE) -f CMakeFiles/training.dir/build.make CMakeFiles/training.dir/src/trainingV2.cpp.i
-.PHONY : src/trainingV2.cpp.i
+src/faceDetection.cpp.i:
+	$(MAKE) -f CMakeFiles/faceDetection.dir/build.make CMakeFiles/faceDetection.dir/src/faceDetection.cpp.i
+.PHONY : src/faceDetection.cpp.i
 
-src/trainingV2.s: src/trainingV2.cpp.s
+src/faceDetection.s: src/faceDetection.cpp.s
 
-.PHONY : src/trainingV2.s
+.PHONY : src/faceDetection.s
 
 # target to generate assembly for a file
-src/trainingV2.cpp.s:
-	$(MAKE) -f CMakeFiles/training.dir/build.make CMakeFiles/training.dir/src/trainingV2.cpp.s
-.PHONY : src/trainingV2.cpp.s
+src/faceDetection.cpp.s:
+	$(MAKE) -f CMakeFiles/faceDetection.dir/build.make CMakeFiles/faceDetection.dir/src/faceDetection.cpp.s
+.PHONY : src/faceDetection.cpp.s
+
+src/training.o: src/training.cpp.o
+
+.PHONY : src/training.o
+
+# target to build an object file
+src/training.cpp.o:
+	$(MAKE) -f CMakeFiles/training.dir/build.make CMakeFiles/training.dir/src/training.cpp.o
+.PHONY : src/training.cpp.o
+
+src/training.i: src/training.cpp.i
+
+.PHONY : src/training.i
+
+# target to preprocess a source file
+src/training.cpp.i:
+	$(MAKE) -f CMakeFiles/training.dir/build.make CMakeFiles/training.dir/src/training.cpp.i
+.PHONY : src/training.cpp.i
+
+src/training.s: src/training.cpp.s
+
+.PHONY : src/training.s
+
+# target to generate assembly for a file
+src/training.cpp.s:
+	$(MAKE) -f CMakeFiles/training.dir/build.make CMakeFiles/training.dir/src/training.cpp.s
+.PHONY : src/training.cpp.s
 
 # Help Target
 help:
@@ -200,12 +200,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... faceDetection"
 	@echo "... training"
-	@echo "... src/faceDetectionV2.o"
-	@echo "... src/faceDetectionV2.i"
-	@echo "... src/faceDetectionV2.s"
-	@echo "... src/trainingV2.o"
-	@echo "... src/trainingV2.i"
-	@echo "... src/trainingV2.s"
+	@echo "... src/faceDetection.o"
+	@echo "... src/faceDetection.i"
+	@echo "... src/faceDetection.s"
+	@echo "... src/training.o"
+	@echo "... src/training.i"
+	@echo "... src/training.s"
 .PHONY : help
 
 

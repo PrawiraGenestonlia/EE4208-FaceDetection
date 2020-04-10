@@ -57,27 +57,27 @@ include CMakeFiles/training.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/training.dir/flags.make
 
-CMakeFiles/training.dir/src/trainingV2.cpp.o: CMakeFiles/training.dir/flags.make
-CMakeFiles/training.dir/src/trainingV2.cpp.o: ../src/trainingV2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/prawira/projects/EE4208_FD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/training.dir/src/trainingV2.cpp.o"
-	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/training.dir/src/trainingV2.cpp.o -c /Users/prawira/projects/EE4208_FD/src/trainingV2.cpp
+CMakeFiles/training.dir/src/training.cpp.o: CMakeFiles/training.dir/flags.make
+CMakeFiles/training.dir/src/training.cpp.o: ../src/training.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/prawira/projects/EE4208_FD/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/training.dir/src/training.cpp.o"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/training.dir/src/training.cpp.o -c /Users/prawira/projects/EE4208_FD/src/training.cpp
 
-CMakeFiles/training.dir/src/trainingV2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/training.dir/src/trainingV2.cpp.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/prawira/projects/EE4208_FD/src/trainingV2.cpp > CMakeFiles/training.dir/src/trainingV2.cpp.i
+CMakeFiles/training.dir/src/training.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/training.dir/src/training.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/prawira/projects/EE4208_FD/src/training.cpp > CMakeFiles/training.dir/src/training.cpp.i
 
-CMakeFiles/training.dir/src/trainingV2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/training.dir/src/trainingV2.cpp.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/prawira/projects/EE4208_FD/src/trainingV2.cpp -o CMakeFiles/training.dir/src/trainingV2.cpp.s
+CMakeFiles/training.dir/src/training.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/training.dir/src/training.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/prawira/projects/EE4208_FD/src/training.cpp -o CMakeFiles/training.dir/src/training.cpp.s
 
 # Object files for target training
 training_OBJECTS = \
-"CMakeFiles/training.dir/src/trainingV2.cpp.o"
+"CMakeFiles/training.dir/src/training.cpp.o"
 
 # External object files for target training
 training_EXTERNAL_OBJECTS =
 
-../training: CMakeFiles/training.dir/src/trainingV2.cpp.o
+../training: CMakeFiles/training.dir/src/training.cpp.o
 ../training: CMakeFiles/training.dir/build.make
 ../training: /usr/local/lib/libopencv_gapi.4.2.0.dylib
 ../training: /usr/local/lib/libopencv_stitching.4.2.0.dylib

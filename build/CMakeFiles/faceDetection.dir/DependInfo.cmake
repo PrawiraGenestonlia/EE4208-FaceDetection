@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/prawira/projects/EE4208_FD/src/faceDetectionV2.cpp" "/Users/prawira/projects/EE4208_FD/build/CMakeFiles/faceDetection.dir/src/faceDetectionV2.cpp.o"
+  "/Users/prawira/projects/EE4208_FD/src/faceDetection.cpp" "/Users/prawira/projects/EE4208_FD/build/CMakeFiles/faceDetection.dir/src/faceDetection.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
